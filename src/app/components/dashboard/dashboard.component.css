@@ -47,3 +47,11 @@
         flex: 4;
     }
 }
+
+.developer-info {
+    justify-content: center;
+}
+
+.developer-name {
+    font-weight: normal;
+}

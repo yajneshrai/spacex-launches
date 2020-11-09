@@ -24,3 +24,9 @@
 h4 span.flight-text-color {
     font-weight: normal;
 }
+
+@media screen and (max-width: 699px) {
+    .flight {
+        margin: 5% 0 0;
+    }
+}
