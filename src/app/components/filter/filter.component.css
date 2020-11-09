@@ -1,0 +1,62 @@
+.filter-container {
+    background-color: white;
+    padding: 5%;
+    margin: 0 5% 0 0;
+    border-radius: 10px;
+}
+
+.filter-header {
+    margin: unset;
+}
+
+@media screen and (max-width: 699px) {
+    .filter-container {
+        margin: unset;
+    }
+}
+
+.clear {    
+    float: right;
+    color: #9E9E9E;
+    cursor: pointer;
+    background: #eee;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-title {
+    margin: unset;
+    padding: 3%;
+    border-bottom: 1px solid #BDBDBD;
+    text-align: center;
+    margin: 0 20%;
+}
+
+.option-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.option-col {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+    margin: 3% 0;
+}
+
+.option {
+    background-color: #c1dd9c;
+    width: 3rem;
+    padding: 0.35rem;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: #75b900;
+}

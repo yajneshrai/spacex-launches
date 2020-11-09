@@ -1,0 +1,69 @@
+<div class="filter-container">
+    <h3 class="filter-header">
+        Filters
+        <span class="clear" 
+        title="Clear filters"
+        (click)="clear()">x</span>
+    </h3>
+
+    <br>
+
+    <h4 class="filter-title">
+        Launch Year
+    </h4>
+    
+    <div class="option-row">
+        <div *ngFor="let year of launchYears" class="option-col">
+            <span class="option" 
+            [ngClass]="{'selected': year == filter.launch_year}"
+            (click)="updateQuery('launch_year', year)">
+                {{year}}
+            </span>
+        </div>
+    </div>
+
+    <br>
+
+    <h4 class="filter-title">
+        Successful Launch
+    </h4>
+    
+    <div class="option-row">
+        <div class="option-col">
+            <span class="option" 
+            [ngClass]="{'selected': filter?.launch_success == 'true'}"
+            (click)="updateQuery('launch_success', 'true')">
+            True</span>
+        </div>
+        <div class="option-col">
+            <span class="option" 
+            [ngClass]="{'selected': filter?.launch_success == 'false'}"
+            (click)="updateQuery('launch_success', 'false')">
+            False</span>
+        </div>
+    </div>
+
+    <br>
+
+    <h4 class="filter-title">
+        Successful Landing
+    </h4>
+    
+    <div class="option-row">
+        <div class="option-col">
+            <span class="option" 
+            [ngClass]="{'selected': filter?.land_success == 'true'}"
+            (click)="updateQuery('land_success', 'true')">
+            True</span>
+        </div>
+        <div class="option-col">
+            <span class="option"
+            [ngClass]="{'selected': filter?.land_success == 'false'}"
+            (click)="updateQuery('land_success', 'false')">
+            False</span>
+        </div>
+    </div>
+
+    <br>
+
+</div>

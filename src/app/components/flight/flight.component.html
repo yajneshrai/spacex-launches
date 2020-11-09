@@ -1,0 +1,28 @@
+    <div class="flight"> 
+        <div class="flight-img">
+            <img [src]="flight.links.mission_patch" [alt]="flight.flight_number">
+        </div>
+
+        <h3 class="flight-label flight-text-color">
+            {{flight.mission_name}} #{{flight.flight_number}}
+        </h3>
+        
+        <h4>Mission IDs</h4>
+        <ul>
+            <ng-container *ngIf="flight.mission_id.length; else noMissionId">
+                <li *ngFor="let id of flight.mission_id"
+                class="flight-text-color">{{id}}
+                </li>
+            </ng-container>
+            <ng-template #noMissionId>
+                <li><em>No Data</em></li>
+            </ng-template>
+        </ul>
+
+        <h4 class="flight-launch-year">Launch Year: <span class="flight-text-color">{{flight.launch_year}}</span> </h4>
+
+        <h4 class="flight-launch-success">Successful Launch: <span class="flight-text-color">{{flight.launch_success ? 'Yes': 'No'}}</span> </h4>
+
+        <h4 class="flight-land-success">Successful Landing: <span class="flight-text-color">{{flight.launch_landing ? 'Yes': 'No'}}</span> </h4>
+    </div>
+    
