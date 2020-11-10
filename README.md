@@ -11,6 +11,7 @@ This projects shows the SpaceX launch records and allows filter the records base
   - Flight         : Displays the details for individual flight/mission.
 - Cusomt Service used in the application:
   - Launch Data Service : Contains a method `getLaunchData()` which takes a map of selected filter key-value pair and updates the API url, makes the GET call to fetch records.
+- Basic unit testcases are implemented for testing various application features.
 
 ## Lighthouse Score
 
