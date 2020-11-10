@@ -27,4 +27,18 @@ describe('LaunchResultsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should show loading text when records are being fetched', () => {
+    component.isLoading = true;
+    const text = fixture.nativeElement.querySelector('.launch-result-container h3').textContent;
+    expect(text).toBe('Loading...');
+  });
+
+  it('should show message when no matching records found', () => {
+    component.isLoading = false;
+    component.launchRecords = [];
+    fixture.detectChanges();
+    const text = fixture.nativeElement.querySelector('.launch-result-container h3').textContent;
+    expect(text).toBe('No records found!');
+  });
 });

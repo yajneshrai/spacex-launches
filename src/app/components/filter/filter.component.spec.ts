@@ -1,4 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { FilterComponent } from './filter.component';
@@ -6,11 +8,14 @@ import { FilterComponent } from './filter.component';
 describe('FilterComponent', () => {
   let component: FilterComponent;
   let fixture: ComponentFixture<FilterComponent>;
+  let router: Router;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ FilterComponent ],
-      imports: [ RouterTestingModule ]
+      imports: [ RouterTestingModule.withRoutes([{
+        path: 'launches', redirectTo: ''
+      }]) ]
     })
     .compileComponents();
   });
@@ -18,6 +23,7 @@ describe('FilterComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(FilterComponent);
     component = fixture.componentInstance;
+    router = TestBed.inject(Router);
     fixture.detectChanges();
   });
 
@@ -38,16 +44,19 @@ describe('FilterComponent', () => {
     expect(component.filter).toEqual(expectedFilter);
   });
 
-  /* it('URL changes ', () => {
+  it('should update the URL with query params after filter changes', fakeAsync(() => {
+    const launchYearElement = fixture.nativeElement.querySelector('.option-col span.option');
+    const lanuchYearText = launchYearElement.textContent.trim();
+    launchYearElement.click();
+    tick();
+    expect(router.url).toContain('?launch_year=' + lanuchYearText);
+  }));
 
-  }) */
-
+  it('should add new class for background color on option click', () => {
+    const launchYearElement = fixture.nativeElement.querySelector('.option-col span.option');
+    launchYearElement.click();
+    fixture.detectChanges();
+    expect(launchYearElement.classList).toContain('selected');
+  });
 });
 
-
-/* class MockActivatedRoute extends ActivatedRoute {
-  constructor() {
-    super();
-    this.queryParams = of({ launch_year: 2015 });
-  }
-} */

@@ -14,10 +14,7 @@ describe('DashboardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ DashboardComponent ],
-      imports: [ RouterTestingModule ],
-      providers: [
-        { provide: Router, useValue: routerSpy }
-      ]
+      imports: [ RouterTestingModule ]
     })
     .compileComponents();
   });
@@ -33,12 +30,14 @@ describe('DashboardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  /* it('URL changes to "/launches" for ""', fakeAsync(() => {
-    const spy = router.navigateByUrl as jasmine.Spy;
-    router.navigate(['']);
-    const navArgs = spy.calls.first().args[0];
-    tick(10);
-    console.log(navArgs);
-    expect(navArgs).toContain('/launches');
-  })); */
+  it('should show title', () => {
+    const title = fixture.nativeElement.querySelector('.container h2').textContent;
+    expect(title).toBe('SpaceX Launch Programs');
+  });
+
+  it('should show developer name', () => {
+    const title = fixture.nativeElement.querySelector('.developer-info h3').textContent;
+    expect(title).toContain('Yajnesh Rai');
+  });
+
 });

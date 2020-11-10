@@ -14,7 +14,7 @@
     
     <div class="option-row">
         <div *ngFor="let year of launchYears" class="option-col">
-            <span class="option" 
+            <span class="option"
             [ngClass]="{'selected': year == filter.launch_year}"
             (click)="updateQuery('launch_year', year)">
                 {{year}}
