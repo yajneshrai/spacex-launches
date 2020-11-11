@@ -22,7 +22,7 @@ export class FlightComponent implements OnInit {
     if (status === null) {
       return 'Not available';
     } else {
-      return status ? 'Yes' : 'No';
+      return status ? 'True' : 'False';
     }
   }
 }
