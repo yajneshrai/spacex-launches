@@ -14,4 +14,15 @@ export class FlightComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Returns the appropriate string value for status flag
+   * @param status A flag with boolean or null value
+   */
+  getStatus(status: null | boolean): string {
+    if (status === null) {
+      return 'Not available';
+    } else {
+      return status ? 'Yes' : 'No';
+    }
+  }
 }

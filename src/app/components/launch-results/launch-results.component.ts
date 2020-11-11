@@ -12,7 +12,6 @@ import { Observable } from 'rxjs';
 })
 export class LaunchResultsComponent implements OnInit {
 
-  data$: Observable<any>;
   launchRecords: any;
   isLoading: boolean;
 

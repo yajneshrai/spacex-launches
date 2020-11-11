@@ -15,14 +15,14 @@
                 </li>
             </ng-container>
             <ng-template #noMissionId>
-                <li><em>No Data</em></li>
+                <li class="flight-text-color">Not available</li>
             </ng-template>
         </ul>
 
         <h4 class="flight-launch-year">Launch Year: <span class="flight-text-color">{{flight.launch_year}}</span> </h4>
 
-        <h4 class="flight-launch-success">Successful Launch: <span class="flight-text-color">{{flight.launch_success ? 'Yes': 'No'}}</span> </h4>
+        <h4 class="flight-launch-success">Successful Launch: <span class="flight-text-color">{{getStatus(flight.launch_success)}}</span> </h4>
 
-        <h4 class="flight-land-success">Successful Landing: <span class="flight-text-color">{{flight.launch_landing ? 'Yes': 'No'}}</span> </h4>
+        <h4 class="flight-land-success">Successful Landing: <span class="flight-text-color">{{getStatus(flight.rocket?.first_stage?.cores[0]?.land_success)}}</span> </h4>
     </div>
     

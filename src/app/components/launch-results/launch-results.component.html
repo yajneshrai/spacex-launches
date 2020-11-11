@@ -3,7 +3,7 @@
     <ng-container *ngIf="!isLoading; else loadingBlock">
         <ng-container *ngIf="launchRecords.length; else noDataBlock">
             <div class="launch-result" *ngFor="let flight of launchRecords">
-                <app-flight [flight]="flight"></app-flight>
+                <app-flight [flight]="flight" [filter]="filter"></app-flight>
             </div>
         </ng-container>
     </ng-container>
