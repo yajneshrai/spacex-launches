@@ -25,6 +25,13 @@ describe('FlightComponent', () => {
       mission_id: ['Falcon 9 Test Flight'],
       launch_year: '2010',
       launch_success: true,
+      rocket: {
+        first_stage: {
+          cores: [ {
+            land_success: true
+          } ]
+        }
+      },
       launch_landing: false
     };
     fixture.detectChanges();
@@ -51,11 +58,11 @@ describe('FlightComponent', () => {
 
   it('should display mission launch status', () => {
     const missionLaunch = fixture.nativeElement.querySelector('.flight > .flight-launch-success span').textContent;
-    expect(missionLaunch).toEqual('Yes');
+    expect(missionLaunch).toEqual('True');
   });
 
   it('should display mission landing status', () => {
     const missionLand = fixture.nativeElement.querySelector('.flight > .flight-land-success span').textContent;
-    expect(missionLand).toEqual('No');
+    expect(missionLand).toEqual('True');
   });
 });
