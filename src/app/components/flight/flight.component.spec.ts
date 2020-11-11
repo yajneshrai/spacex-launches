@@ -31,8 +31,7 @@ describe('FlightComponent', () => {
             land_success: true
           } ]
         }
-      },
-      launch_landing: false
+      }
     };
     fixture.detectChanges();
   });
