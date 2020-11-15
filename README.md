@@ -7,7 +7,7 @@ This projects shows the SpaceX launch records and allows filter the records base
 - Custom components used in the application:
   - Dashbaord      : Acts as a container for showing filter and launch records.
   - Filter         : Contains filters - Launch year, Launch success and Land success. On selecting any value, updates the URL accordingly.
-  - Launch Results : A container component that observes to URL changes and triggers request to fetch right records.
+  - Launch Results : A container component that observes URL changes and triggers request to fetch right records.
   - Flight         : Displays the details for individual flight/mission.
 - Cusomt Service used in the application:
   - Launch Data Service : Contains a method `getLaunchData()` which takes a map of selected filter key-value pair and updates the API url, makes the GET call to fetch records.
